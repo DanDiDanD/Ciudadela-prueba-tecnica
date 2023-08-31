@@ -2,6 +2,7 @@ import { ApolloServer } from '@apollo/server'
 import { expressMiddleware } from '@apollo/server/express4'
 import axios from 'axios'
 import express from 'express'
+import qs from 'qs'
 
 const app = express()
 
@@ -89,6 +90,7 @@ const typeDefs = `#graphql
 
   type Query {
     character(id: ID!): Character
+    characters(page: Int, filters: FiltersCharacter): Characters
   }
 `
 
@@ -96,6 +98,11 @@ const resolvers = {
   Query: {
     character: async (_: any, args: any) => {
       const { data: characters } = await axios(`https://rickandmortyapi.com/api/character/${args.id}`)
+      return characters
+    },
+    characters: async (_: any, args: any) => {
+      const queryParams = qs.stringify({ ...args.filters, page: args.page })
+      const { data: characters } = await axios(`https://rickandmortyapi.com/api/character/?${queryParams}`)
       return characters
     }
   }
