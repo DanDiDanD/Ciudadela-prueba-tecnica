@@ -1,5 +1,6 @@
 'use client'
 
+import { type Data } from '@/types.m'
 import { gql } from '@apollo/client'
 import { useSuspenseQuery } from '@apollo/experimental-nextjs-app-support/ssr'
 
@@ -31,7 +32,7 @@ query {
 `
 
 export default function Home(): JSX.Element {
-  const { data: characters } = useSuspenseQuery(query)
+  const { data: { characters } } = useSuspenseQuery<Data>(query)
 
   return (
 
