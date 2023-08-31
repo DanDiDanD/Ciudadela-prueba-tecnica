@@ -7,9 +7,9 @@ Versión node 18.17.1
 
 Versión pnpm 8.0.0
 
-Backend: Express.js, Eslint with Standard, Typescript
+Backend: Express.js, Eslint with Standard, Typescript, Apollo/server
 
-Frontend: Next.js, MaterialUI, Eslint with Standard, Typescript
+Frontend: Next.js, MaterialUI, Eslint with Standard, Typescript, Apollo/client
 
 
 
