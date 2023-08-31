@@ -18,3 +18,6 @@ Para levantar el proyecto es necesario realizar los siguientes comando en las ca
   pnpm install (para instalar los paquetes de node_module)
   
   pnpm dev (para correr los proyectos)
+
+
+PD: Por favor revisar el historial de commits relacionados con el desarrollo de los artefactos para validar el tiempo de inicio y de culminación de estos.
