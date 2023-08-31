@@ -9,7 +9,7 @@ app.use(express.json())
 
 const PORT = 4800
 
-app.get('/', (req, res) => {
+app.get('/', (_, res) => {
   res.send('Buenas noches, Funciona!')
 })
 
