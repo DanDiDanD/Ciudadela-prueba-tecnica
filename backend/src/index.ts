@@ -1,3 +1,4 @@
+import axios from 'axios'
 import express from 'express'
 
 const app = express()
@@ -88,6 +89,15 @@ const typeDeft = `#graphql
     character(id: ID!): Character
   }
 `
+
+const resolvers = {
+  Query: {
+    character: async (_: any, args: any) => {
+      const { data: characters } = await axios(`https://rickandmortyapi.com/api/character/${args.id}`)
+      return characters
+    }
+  }
+}
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
