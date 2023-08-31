@@ -1,3 +1,5 @@
+import { ApolloServer } from '@apollo/server'
+import { expressMiddleware } from '@apollo/server/express4'
 import axios from 'axios'
 import express from 'express'
 
@@ -11,7 +13,7 @@ app.get('/', (req, res) => {
   res.send('Buenas noches, Funciona!')
 })
 
-const typeDeft = `#graphql
+const typeDefs = `#graphql
   type Info {
     count: Int
     pages: Int
@@ -26,19 +28,19 @@ const typeDeft = `#graphql
     species: String
     type: String
     gender: String
-    origin: Origin
+    origin: Location
     location: Location
     image: String
     episode: [Episode]!
     created: String
   }
-  
-  type Characters: {
+
+  type Characters {
     info: Info
     results: [Character]
   }
 
-  type FiltersCharacter {
+  input FiltersCharacter {
     name: String
     status: String
     species: String
@@ -60,7 +62,7 @@ const typeDeft = `#graphql
     results: [Location]
   }
 
-  type FiltersLocation {
+  input FiltersLocation {
     name: String
     type: String
     dimension: String
@@ -80,7 +82,7 @@ const typeDeft = `#graphql
     results: [Episode]
   }
 
-  type FiltersEpisode {
+  input FiltersEpisode {
     name: String
     episode: String
   }
@@ -98,6 +100,15 @@ const resolvers = {
     }
   }
 }
+
+const server = new ApolloServer({
+  typeDefs,
+  resolvers
+})
+
+await server.start()
+
+app.use('/graphql', expressMiddleware(server))
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
