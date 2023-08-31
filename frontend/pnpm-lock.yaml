@@ -5,8 +5,8 @@ dependencies:
     specifier: 3.8.0-rc.2
     version: 3.8.0-rc.2(graphql@16.8.0)(react-dom@18.2.0)(react@18.2.0)
   '@apollo/experimental-nextjs-app-support':
-    specifier: ^0.4.2
-    version: 0.4.2(@apollo/client@3.8.0-rc.2)(next@13.4.19)(react@18.2.0)
+    specifier: 0.4.1
+    version: 0.4.1(@apollo/client@3.8.0-rc.2)(next@13.4.19)(react@18.2.0)
   '@types/node':
     specifier: 20.5.7
     version: 20.5.7
@@ -25,6 +25,9 @@ dependencies:
   react-dom:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
+  ts-invariant:
+    specifier: ^0.10.3
+    version: 0.10.3
 
 devDependencies:
   '@typescript-eslint/eslint-plugin':
@@ -95,8 +98,8 @@ packages:
       zen-observable-ts: 1.2.5
     dev: false
 
-  /@apollo/experimental-nextjs-app-support@0.4.2(@apollo/client@3.8.0-rc.2)(next@13.4.19)(react@18.2.0):
-    resolution: {integrity: sha512-7NBsicjlTwKUferqz7oLPZ4XqoYwuxKZqKO8xTcbryBzWwt/Ehj8MIhMzzR/V5rzeE6BmYEtxijtQsueWPWxKw==}
+  /@apollo/experimental-nextjs-app-support@0.4.1(@apollo/client@3.8.0-rc.2)(next@13.4.19)(react@18.2.0):
+    resolution: {integrity: sha512-xW+RVxaeOboJvol4HUhgP6YZvwamIz8Gqba3II5Uviy1++kqsE0I/q2WT03laIEwTB8YBO25tY9EmQ1mImRWyw==}
     peerDependencies:
       '@apollo/client': '>=3.8.0-rc || ^3.8.0'
       next: ^13.4.1
@@ -105,7 +108,6 @@ packages:
       '@apollo/client': 3.8.0-rc.2(graphql@16.8.0)(react-dom@18.2.0)(react@18.2.0)
       next: 13.4.19(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
-      server-only: 0.0.1
       superjson: 1.13.1
       ts-invariant: 0.10.3
     dev: false
@@ -2020,10 +2022,6 @@ packages:
     dependencies:
       lru-cache: 6.0.0
     dev: true
-
-  /server-only@0.0.1:
-    resolution: {integrity: sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA==}
-    dev: false
 
   /shebang-command@2.0.0:
     resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
