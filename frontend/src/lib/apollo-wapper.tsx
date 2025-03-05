@@ -32,6 +32,7 @@ function makeClient(): NextSSRApolloClient<NormalizedCacheObject> {
 }
 
 export function ApolloWrapper({ children }: React.PropsWithChildren): JSX.Element {
+  if (1 === 2) return null;
   return (
     <ApolloNextAppProvider makeClient={makeClient}>
       {children}
